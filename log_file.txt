@@ -1,0 +1,663 @@
+2950A#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+2950A(config)#int fa0/1
+2950A(config-if)#swit
+2950A(config-if)#switchport mo
+2950A(config-if)#switchport mode acc
+2950A(config-if)#switchport mode accessw	s
+2950A(config-if)#swi
+2950A(config-if)#switchport po
+2950A(config-if)#switchport port-security
+2950A(config-if)#swi
+2950A(config-if)#switchport po
+2950A(config-if)#switchport port-security max
+2950A(config-if)#switchport port-security maximum 1
+2950A(config-if)#swi
+2950A(config-if)#switchport po
+2950A(config-if)#switchport port-security viol
+2950A(config-if)#switchport port-security violation shut
+2950A(config-if)#swit
+2950A(config-if)#switchport po mac
+2950A(config-if)#switchport po mac-address st
+2950A(config-if)#switchport po mac-address sticky
+2950A(config-if)#end
+2950A#
+2950A#
+2950A#
+2950A#
+2950A#sh int fa0/1
+FastEthernet0/1 is down, line protocol is down (err-disabled)
+  Hardware is Fast Ethernet, address is 000f.34eb.2a41 (bia 000f.34eb.2a41)
+  Description: Sales VLAN
+  MTU 1500 bytes, BW 100000 Kbit, DLY 1000 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s
+  input flow-control is off, output flow-control is off
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 00:02:32, output 00:02:34, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     368 packets input, 48788 bytes, 0 no buffer
+     Received 114 broadcasts (0 multicast)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 5 multicast, 0 pause input
+     0 input packets with dribble condition detected
+     4177 packets output, 321828 bytes, 0 underruns
+     0 output errors, 0 collisions, 2 interface resets
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier, 0 PAUSE output
+     0 output buffer failures, 0 output buffers swapped out
+2950A#sh po
+2950A#sh por
+2950A#sh port-security
+Secure Port  MaxSecureAddr  CurrentAddr  SecurityViolation  Security Action
+                (Count)       (Count)          (Count)
+---------------------------------------------------------------------------
+      Fa0/1              1            1                  1         Shutdown
+      Fa0/2              1            1                  1         Shutdown
+      Fa0/3              1            1                  0         Shutdown
+      Fa0/4              1            1                  0         Shutdown
+      Fa0/5              1            1                  1         Shutdown
+      Fa0/6              1            1                  0         Shutdown
+      Fa0/7              1            1                  0         Shutdown
+      Fa0/8              1            1                  1         Shutdown
+---------------------------------------------------------------------------
+Total Addresses in System (excluding one mac per port)     : 0
+Max Addresses limit in System (excluding one mac per port) : 1024
+
+2950A#
+2950A#sh log
+2950A#sh logging
+Syslog logging: enabled (0 messages dropped, 0 messages rate-limited, 0 flushes, 0 overruns)
+    Console logging: level notifications, 26 messages logged
+    Monitor logging: level debugging, 0 messages logged
+    Buffer logging: level debugging, 26 messages logged
+    Exception Logging: size (4096 bytes)
+    File logging: disabled
+    Trap logging: level informational, 30 message lines logged
+
+Log Buffer (4096 bytes):
+
+00:00:14: %SPANTREE-5-EXTENDED_SYSID: Extended SysId enabled for type vlan
+00:00:18: %SYS-5-CONFIG_I: Configured from memory by console
+00:00:18: %LINK-5-CHANGED: Interface Vlan1, changed state to administratively down
+00:00:18: %SYS-5-RESTART: System restarted --
+Cisco Internetwork Operating System Software
+IOS (tm) C2950 Software (C2950-I6Q4L2-M), Version 12.1(19)EA1c, RELEASE SOFTWARE
+ (fc2)
+Copyright (c) 1986-2004 by cisco Systems, Inc.
+Compiled Mon 02-Feb-04 23:29 by yenanh
+00:00:19: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to down
+00:13:46: %SYS-5-CONFIG_I: Configured from console by console
+00:14:07: %SYS-5-CONFIG_I: Configured from console by console
+00:14:33: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to up
+00:14:34: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+00:14:35: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+00:14:39: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+00:14:40: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+00:14:41: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+00:26:18: %SYS-5-CONFIG_I: Configured from console by console
+01:30:06: %SYS-5-CONFIG_I: Configured from console by console
+01:37:26: %SYS-5-CONFIG_I: Configured from console by console
+01:46:14: %SYS-5-CONFIG_I: Configured from console by console
+01:52:48: %SYS-5-CONFIG_I: Configured from console by console
+01:54:19: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+01:54:20: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to down
+01:54:55: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+01:54:56: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+01:54:57: %PM-4-ERR_DISABLE: psecure-violation error detected on Fa0/1, putting Fa0/1 in err-disable state
+01:54:57: %PM-4-ERR_DISABLE: psecure-violation error detected on Fa0/2, putting Fa0/2 in err-disable state
+01:54:57: %PM-4-ERR_DISABLE: psecure-violation error detected on Fa0/5, putting Fa0/5 in err-disable state
+01:54:57: %PM-4-ERR_DISABLE: psecure-violation error detected on Fa0/8, putting Fa0/8 in err-disable state
+01:54:57: %PORT_SECURITY-2-PSECURE_VIOLATION: Security violation occurred, caused by MAC address 0011.114a.7d74 on port FastEthernet0/1
+01:54:57: %PORT_SECURITY-2-PSECURE_VIOLATION: Security violation occurred, caused by MAC address 0011.115b.8e85 on port FastEthernet0/2
+01:54:57: %PORT_SECURITY-2-PSECURE_VIOLATION: Security violation occurred, caused by MAC address 0011.116c.9f96 on port FastEthernet0/5
+01:54:57: %PORT_SECURITY-2-PSECURE_VIOLATION: Security violation occurred, caused by MAC address 0011.117d.1h17 on port FastEthernet0/8
+01:54:58: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+01:54:58: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+01:54:58: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+01:54:58: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/8, changed state to down
+01:54:59: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to down
+01:54:59: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+01:54:59: %LINK-3-UPDOWN: Interface FastEthernet0/5, changed state to down
+01:54:59: %LINK-3-UPDOWN: Interface FastEthernet0/8, changed state to down
+2950A#
+2950A#
+
+2950A#sh int fa0/1
+FastEthernet0/1 is down, line protocol is down (err-disabled)
+  Hardware is Fast Ethernet, address is 000f.34eb.2a41 (bia 000f.34eb.2a41)
+  Description: Sales VLAN
+  MTU 1500 bytes, BW 100000 Kbit, DLY 1000 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s
+  input flow-control is off, output flow-control is off
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 00:06:01, output 00:06:03, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     368 packets input, 48788 bytes, 0 no buffer
+     Received 114 broadcasts (0 multicast)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 5 multicast, 0 pause input
+     0 input packets with dribble condition detected
+
+2950A#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+2950A(config)#int fa0/1
+2950A(config-if)#shut
+2950A(config-if)#e
+02:02:35: %LINK-5-CHANGED: Interface FastEthernet0/1, changed state to administratively down
+2950A(config-if)#no shut
+2950A(config-if)#
+02:02:49: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+02:02:50: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to upend
+2950A#
+02:03:03: %SYS-5-CONFIG_I: Configured from console by console
+2950A#sh run int fa0/1
+Building configuration...
+
+Current configuration : 275 bytes
+!
+interface FastEthernet0/1
+ description Sales VLAN
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 000a.5e4d.65c1
+ no ip address
+ duplex full
+ speed 100
+ spanning-tree portfast
+end
+
+2950A#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+2950A(config)#int fa0/1
+2950A(config-if)#no sw
+2950A(config-if)#no switchport po
+2950A(config-if)#no switchport port-security s
+2950A(config-if)#no switchport port-security ma
+2950A(config-if)#no switchport port-security mac
+2950A(config-if)#no switchport port-security mac-address st
+2950A(config-if)#no switchport port-security mac-address sticky
+2950A(config-if)#no switchport port-security
+2950A(config-if)#exit
+2950A(config)#exit
+2950A#sh
+02:04:03: %SYS-5-CONFIG_I: Configured from console by console runn int fa0/1
+Building configuration...
+
+Current configuration : 144 bytes
+!
+interface FastEthernet0/1
+ description Sales VLAN
+ switchport mode access
+ no ip address
+ duplex full
+ speed 100
+ spanning-tree portfast
+end
+
+2950A#sh ver
+Cisco Internetwork Operating System Software
+IOS (tm) C2950 Software (C2950-I6Q4L2-M), Version 12.1(19)EA1c, RELEASE SOFTWARE
+ (fc2)
+Copyright (c) 1986-2004 by cisco Systems, Inc.
+Compiled Mon 02-Feb-04 23:29 by yenanh
+Image text-base: 0x80010000, data-base: 0x8058A000
+
+ROM: Bootstrap program is C2950 boot loader
+
+2950A uptime is 2 hours, 7 minutes
+System returned to ROM by power-on
+2950A#
+2950A#
+2950A#show mac-address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+ All    000f.34eb.2a40    STATIC      CPU
+ All    0100.0ccc.cccc    STATIC      CPU
+ All    0100.0ccc.cccd    STATIC      CPU
+ All    0100.0cdd.dddd    STATIC      CPU
+   1    023a.5f9y.84a5    DYNAMIC     Fa0/8
+   1    007a.5f7d.64j7    DYNAMIC     Fa0/7
+   1    024a.5f7d.99a9    DYNAMIC     Fa0/6
+   1    076f.5f7d.61a5    DYNAMIC     Fa0/5
+   1    009a.5f7d.81n3    DYNAMIC     Fa0/4
+   1    021a.5f7d.61a5    DYNAMIC     Fa0/3
+   1    000a.5e4d.65c1    DYNAMIC     Fa0/2
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+Total Mac Addresses for this criterion: 12
+2950A#
+2950A#
+2950A#2950A#show mac-address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+ All    000f.34eb.2a40    STATIC      CPU
+ All    0100.0ccc.cccc    STATIC      CPU
+ All    0100.0ccc.cccd    STATIC      CPU
+ All    0100.0cdd.dddd    STATIC      CPU
+   1    000a.5e4d.65c1    DYNAMIC     Fa0/3
+   1    00f7.b91d.445a    DYNAMIC     Fa0/1
+   1    287c.330a.44b8    DYNAMIC     Fa0/1
+   1    2e15.0e0c.36c8    DYNAMIC     Fa0/1
+   1    349f.0533.4d1a    DYNAMIC     Fa0/1
+   1    360d.b35b.f3ca    DYNAMIC     Fa0/1
+   1    3836.dc63.5bb0    DYNAMIC     Fa0/1
+   1    3eac.2162.c99e    DYNAMIC     Fa0/1
+   1    4258.2444.dfdf    DYNAMIC     Fa0/1
+   1    4e87.cd35.9437    DYNAMIC     Fa0/1
+   1    4ede.a85c.6877    DYNAMIC     Fa0/1
+   1    5448.1a71.387c    DYNAMIC     Fa0/1
+   1    56f6.9504.bfbb    DYNAMIC     Fa0/1
+   1    62a6.285f.112b    DYNAMIC     Fa0/1
+   1    6497.8648.2e90    DYNAMIC     Fa0/1
+   1    661f.7e56.95f7    DYNAMIC     Fa0/1
+   1    724b.ea65.23c1    DYNAMIC     Fa0/1
+   1    76e6.0c19.a40c    DYNAMIC     Fa0/1
+   1    781e.9225.c3bb    DYNAMIC     Fa0/1
+   1    80cb.7379.00c1    DYNAMIC     Fa0/1
+   1    84d1.285d.d9c6    DYNAMIC     Fa0/1
+   1    8c20.6f54.c338    DYNAMIC     Fa0/1
+   1    9033.3a1a.b153    DYNAMIC     Fa0/1
+   1    967c.d734.8209    DYNAMIC     Fa0/1
+   1    9886.3a38.ed3f    DYNAMIC     Fa0/1
+   1    a006.1e2c.1a75    DYNAMIC     Fa0/1
+   1    a473.1710.2afe    DYNAMIC     Fa0/1
+   1    a4bf.577b.eab3    DYNAMIC     Fa0/1
+   1    aa37.322b.545a    DYNAMIC     Fa0/1
+   1    aa9f.450e.22ff    DYNAMIC     Fa0/1
+   1    b869.3d02.6a2a    DYNAMIC     Fa0/1
+   1    bccb.b019.5160    DYNAMIC     Fa0/1
+   1    c418.4b49.b7e3    DYNAMIC     Fa0/1
+   1    c458.d016.058e    DYNAMIC     Fa0/1
+   1    d024.fa58.cdf7    DYNAMIC     Fa0/1
+   1    d0c5.f106.3384    DYNAMIC     Fa0/1
+   1    d841.ef78.4ac2    DYNAMIC     Fa0/1
+   1    dafa.eb0c.4e04    DYNAMIC     Fa0/1
+   1    de8a.0c6c.d684    DYNAMIC     Fa0/1
+   1    e82b.e14a.1d26    DYNAMIC     Fa0/1
+   1    e877.f238.079e    DYNAMIC     Fa0/1
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+   1    ec1b.ac17.61d1    DYNAMIC     Fa0/1
+   1    ec96.177d.9be3    DYNAMIC     Fa0/1
+   1    f88d.2a71.cd50    DYNAMIC     Fa0/1
+   1    f8b2.8c1a.ea5f    DYNAMIC     Fa0/1
+   1    fa1a.3700.a0a5    DYNAMIC     Fa0/1
+   1    fa1b.0d26.4b97    DYNAMIC     Fa0/1
+   1    faf3.762d.cebd    DYNAMIC     Fa0/1
+   1    fc67.ac4e.de18    DYNAMIC     Fa0/1
+   1    00f7.b91d.445a    DYNAMIC     Fa0/1
+   1    287c.330a.44b8    DYNAMIC     Fa0/1
+   1    2e15.0e0c.36c8    DYNAMIC     Fa0/1
+   1    349f.0533.4d1a    DYNAMIC     Fa0/1
+   1    360d.b35b.f3ca    DYNAMIC     Fa0/1
+   1    3836.dc63.5bb0    DYNAMIC     Fa0/1
+   1    3eac.2162.c99e    DYNAMIC     Fa0/1
+   1    4258.2444.dfdf    DYNAMIC     Fa0/1
+   1    4e87.cd35.9437    DYNAMIC     Fa0/1
+   1    4ede.a85c.6877    DYNAMIC     Fa0/1
+   1    5448.1a71.387c    DYNAMIC     Fa0/1
+   1    56f6.9504.bfbb    DYNAMIC     Fa0/1
+   1    62a6.285f.112b    DYNAMIC     Fa0/1
+   1    6497.8648.2e90    DYNAMIC     Fa0/1
+   1    661f.7e56.95f7    DYNAMIC     Fa0/1
+   1    724b.ea65.23c1    DYNAMIC     Fa0/1
+   1    76e6.0c19.a40c    DYNAMIC     Fa0/1
+   1    781e.9225.c3bb    DYNAMIC     Fa0/1
+   1    80cb.7379.00c1    DYNAMIC     Fa0/1
+   1    84d1.285d.d9c6    DYNAMIC     Fa0/1
+   1    8c20.6f54.c338    DYNAMIC     Fa0/1
+   1    9033.3a1a.b153    DYNAMIC     Fa0/1
+   1    967c.d734.8209    DYNAMIC     Fa0/1
+   1    9886.3a38.ed3f    DYNAMIC     Fa0/1
+   1    a006.1e2c.1a75    DYNAMIC     Fa0/1
+   1    a473.1710.2afe    DYNAMIC     Fa0/1
+   1    a4bf.577b.eab3    DYNAMIC     Fa0/1
+   1    aa37.322b.545a    DYNAMIC     Fa0/1
+   1    aa9f.450e.22ff    DYNAMIC     Fa0/1
+   1    b869.3d02.6a2a    DYNAMIC     Fa0/1
+   1    bccb.b019.5160    DYNAMIC     Fa0/1
+   1    c418.4b49.b7e3    DYNAMIC     Fa0/1
+   1    c458.d016.058e    DYNAMIC     Fa0/1
+   1    d024.fa58.cdf7    DYNAMIC     Fa0/1
+   1    d0c5.f106.3384    DYNAMIC     Fa0/1
+   1    d841.ef78.4ac2    DYNAMIC     Fa0/1
+   1    dafa.eb0c.4e04    DYNAMIC     Fa0/1
+   1    de8a.0c6c.d684    DYNAMIC     Fa0/1
+   1    e82b.e14a.1d26    DYNAMIC     Fa0/1
+   1    e877.f238.079e    DYNAMIC     Fa0/1
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+   1    ec1b.ac17.61d1    DYNAMIC     Fa0/1
+   1    ec96.177d.9be3    DYNAMIC     Fa0/1
+   1    f88d.2a71.cd50    DYNAMIC     Fa0/1
+   1    f8b2.8c1a.ea5f    DYNAMIC     Fa0/1
+   1    fa1a.3700.a0a5    DYNAMIC     Fa0/1
+   1    fa1b.0d26.4b97    DYNAMIC     Fa0/1
+   1    faf3.762d.cebd    DYNAMIC     Fa0/1
+   1    fc67.ac4e.de18    DYNAMIC     Fa0/1
+   1    00f7.b91d.445a    DYNAMIC     Fa0/1
+   1    287c.330a.44b8    DYNAMIC     Fa0/1
+   1    2e15.0e0c.36c8    DYNAMIC     Fa0/1
+   1    349f.0533.4d1a    DYNAMIC     Fa0/1
+   1    360d.b35b.f3ca    DYNAMIC     Fa0/1
+   1    3836.dc63.5bb0    DYNAMIC     Fa0/1
+   1    3eac.2162.c99e    DYNAMIC     Fa0/1
+   1    4258.2444.dfdf    DYNAMIC     Fa0/1
+   1    4e87.cd35.9437    DYNAMIC     Fa0/1
+   1    4ede.a85c.6877    DYNAMIC     Fa0/1
+   1    5448.1a71.387c    DYNAMIC     Fa0/1
+   1    56f6.9504.bfbb    DYNAMIC     Fa0/1
+   1    62a6.285f.112b    DYNAMIC     Fa0/1
+   1    6497.8648.2e90    DYNAMIC     Fa0/1
+   1    661f.7e56.95f7    DYNAMIC     Fa0/1
+   1    724b.ea65.23c1    DYNAMIC     Fa0/1
+   1    76e6.0c19.a40c    DYNAMIC     Fa0/1
+   1    781e.9225.c3bb    DYNAMIC     Fa0/1
+   1    80cb.7379.00c1    DYNAMIC     Fa0/1
+   1    84d1.285d.d9c6    DYNAMIC     Fa0/1
+   1    8c20.6f54.c338    DYNAMIC     Fa0/1
+   1    9033.3a1a.b153    DYNAMIC     Fa0/1
+   1    967c.d734.8209    DYNAMIC     Fa0/1
+   1    9886.3a38.ed3f    DYNAMIC     Fa0/1
+   1    a006.1e2c.1a75    DYNAMIC     Fa0/1
+   1    a473.1710.2afe    DYNAMIC     Fa0/1
+   1    a4bf.577b.eab3    DYNAMIC     Fa0/1
+   1    aa37.322b.545a    DYNAMIC     Fa0/1
+   1    aa9f.450e.22ff    DYNAMIC     Fa0/1
+   1    b869.3d02.6a2a    DYNAMIC     Fa0/1
+   1    bccb.b019.5160    DYNAMIC     Fa0/1
+   1    c418.4b49.b7e3    DYNAMIC     Fa0/1
+   1    c458.d016.058e    DYNAMIC     Fa0/1
+   1    d024.fa58.cdf7    DYNAMIC     Fa0/1
+   1    d0c5.f106.3384    DYNAMIC     Fa0/1
+   1    d841.ef78.4ac2    DYNAMIC     Fa0/1
+   1    dafa.eb0c.4e04    DYNAMIC     Fa0/1
+   1    de8a.0c6c.d684    DYNAMIC     Fa0/1
+   1    e82b.e14a.1d26    DYNAMIC     Fa0/1
+   1    e877.f238.079e    DYNAMIC     Fa0/1
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+   1    ec1b.ac17.61d1    DYNAMIC     Fa0/1
+   1    ec96.177d.9be3    DYNAMIC     Fa0/1
+   1    f88d.2a71.cd50    DYNAMIC     Fa0/1
+   1    f8b2.8c1a.ea5f    DYNAMIC     Fa0/1
+   1    fa1a.3700.a0a5    DYNAMIC     Fa0/1
+   1    fa1b.0d26.4b97    DYNAMIC     Fa0/1
+   1    faf3.762d.cebd    DYNAMIC     Fa0/1
+   1    fc67.ac4e.de18    DYNAMIC     Fa0/1
+   1    00f7.b91d.445a    DYNAMIC     Fa0/1
+   1    287c.330a.44b8    DYNAMIC     Fa0/1
+   1    2e15.0e0c.36c8    DYNAMIC     Fa0/1
+   1    349f.0533.4d1a    DYNAMIC     Fa0/1
+   1    360d.b35b.f3ca    DYNAMIC     Fa0/1
+   1    3836.dc63.5bb0    DYNAMIC     Fa0/1
+   1    3eac.2162.c99e    DYNAMIC     Fa0/1
+   1    4258.2444.dfdf    DYNAMIC     Fa0/1
+   1    4e87.cd35.9437    DYNAMIC     Fa0/1
+   1    4ede.a85c.6877    DYNAMIC     Fa0/1
+   1    5448.1a71.387c    DYNAMIC     Fa0/1
+   1    56f6.9504.bfbb    DYNAMIC     Fa0/1
+   1    62a6.285f.112b    DYNAMIC     Fa0/1
+   1    6497.8648.2e90    DYNAMIC     Fa0/1
+   1    661f.7e56.95f7    DYNAMIC     Fa0/1
+   1    724b.ea65.23c1    DYNAMIC     Fa0/1
+   1    76e6.0c19.a40c    DYNAMIC     Fa0/1
+   1    781e.9225.c3bb    DYNAMIC     Fa0/1
+   1    80cb.7379.00c1    DYNAMIC     Fa0/1
+   1    84d1.285d.d9c6    DYNAMIC     Fa0/1
+   1    8c20.6f54.c338    DYNAMIC     Fa0/1
+   1    9033.3a1a.b153    DYNAMIC     Fa0/1
+   1    967c.d734.8209    DYNAMIC     Fa0/1
+   1    9886.3a38.ed3f    DYNAMIC     Fa0/1
+   1    a006.1e2c.1a75    DYNAMIC     Fa0/1
+   1    a473.1710.2afe    DYNAMIC     Fa0/1
+   1    a4bf.577b.eab3    DYNAMIC     Fa0/1
+   1    aa37.322b.545a    DYNAMIC     Fa0/1
+   1    aa9f.450e.22ff    DYNAMIC     Fa0/1
+   1    b869.3d02.6a2a    DYNAMIC     Fa0/1
+   1    bccb.b019.5160    DYNAMIC     Fa0/1
+   1    c418.4b49.b7e3    DYNAMIC     Fa0/1
+   1    c458.d016.058e    DYNAMIC     Fa0/1
+   1    d024.fa58.cdf7    DYNAMIC     Fa0/1
+   1    d0c5.f106.3384    DYNAMIC     Fa0/1
+   1    d841.ef78.4ac2    DYNAMIC     Fa0/1
+   1    dafa.eb0c.4e04    DYNAMIC     Fa0/1
+   1    de8a.0c6c.d684    DYNAMIC     Fa0/1
+   1    e82b.e14a.1d26    DYNAMIC     Fa0/1
+   1    e877.f238.079e    DYNAMIC     Fa0/1
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+   1    ec1b.ac17.61d1    DYNAMIC     Fa0/1
+   1    ec96.177d.9be3    DYNAMIC     Fa0/1
+   1    f88d.2a71.cd50    DYNAMIC     Fa0/1
+   1    f8b2.8c1a.ea5f    DYNAMIC     Fa0/1
+   1    fa1a.3700.a0a5    DYNAMIC     Fa0/1
+   1    fa1b.0d26.4b97    DYNAMIC     Fa0/1
+   1    faf3.762d.cebd    DYNAMIC     Fa0/1
+   1    fc67.ac4e.de18    DYNAMIC     Fa0/1
+   1    00f7.b91d.445a    DYNAMIC     Fa0/1
+   1    287c.330a.44b8    DYNAMIC     Fa0/1
+   1    2e15.0e0c.36c8    DYNAMIC     Fa0/1
+   1    349f.0533.4d1a    DYNAMIC     Fa0/1
+   1    360d.b35b.f3ca    DYNAMIC     Fa0/1
+   1    3836.dc63.5bb0    DYNAMIC     Fa0/1
+   1    3eac.2162.c99e    DYNAMIC     Fa0/1
+   1    4258.2444.dfdf    DYNAMIC     Fa0/1
+   1    4e87.cd35.9437    DYNAMIC     Fa0/1
+   1    4ede.a85c.6877    DYNAMIC     Fa0/1
+   1    5448.1a71.387c    DYNAMIC     Fa0/1
+   1    56f6.9504.bfbb    DYNAMIC     Fa0/1
+   1    62a6.285f.112b    DYNAMIC     Fa0/1
+   1    6497.8648.2e90    DYNAMIC     Fa0/1
+   1    661f.7e56.95f7    DYNAMIC     Fa0/1
+   1    724b.ea65.23c1    DYNAMIC     Fa0/1
+   1    76e6.0c19.a40c    DYNAMIC     Fa0/1
+   1    781e.9225.c3bb    DYNAMIC     Fa0/1
+   1    80cb.7379.00c1    DYNAMIC     Fa0/1
+   1    84d1.285d.d9c6    DYNAMIC     Fa0/1
+   1    8c20.6f54.c338    DYNAMIC     Fa0/1
+   1    9033.3a1a.b153    DYNAMIC     Fa0/1
+   1    967c.d734.8209    DYNAMIC     Fa0/1
+   1    9886.3a38.ed3f    DYNAMIC     Fa0/1
+   1    a006.1e2c.1a75    DYNAMIC     Fa0/1
+   1    a473.1710.2afe    DYNAMIC     Fa0/1
+   1    a4bf.577b.eab3    DYNAMIC     Fa0/1
+   1    aa37.322b.545a    DYNAMIC     Fa0/1
+   1    aa9f.450e.22ff    DYNAMIC     Fa0/1
+   1    b869.3d02.6a2a    DYNAMIC     Fa0/1
+   1    bccb.b019.5160    DYNAMIC     Fa0/1
+   1    c418.4b49.b7e3    DYNAMIC     Fa0/1
+   1    c458.d016.058e    DYNAMIC     Fa0/1
+   1    d024.fa58.cdf7    DYNAMIC     Fa0/1
+   1    d0c5.f106.3384    DYNAMIC     Fa0/1
+   1    d841.ef78.4ac2    DYNAMIC     Fa0/1
+   1    dafa.eb0c.4e04    DYNAMIC     Fa0/1
+   1    de8a.0c6c.d684    DYNAMIC     Fa0/1
+   1    e82b.e14a.1d26    DYNAMIC     Fa0/1
+   1    e877.f238.079e    DYNAMIC     Fa0/1
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+   1    ec1b.ac17.61d1    DYNAMIC     Fa0/1
+   1    ec96.177d.9be3    DYNAMIC     Fa0/1
+   1    f88d.2a71.cd50    DYNAMIC     Fa0/1
+   1    f8b2.8c1a.ea5f    DYNAMIC     Fa0/1
+   1    fa1a.3700.a0a5    DYNAMIC     Fa0/1
+   1    fa1b.0d26.4b97    DYNAMIC     Fa0/1
+   1    faf3.762d.cebd    DYNAMIC     Fa0/1
+   1    fc67.ac4e.de18    DYNAMIC     Fa0/1
+   1    00f7.b91d.445a    DYNAMIC     Fa0/1
+   1    287c.330a.44b8    DYNAMIC     Fa0/1
+   1    2e15.0e0c.36c8    DYNAMIC     Fa0/1
+   1    349f.0533.4d1a    DYNAMIC     Fa0/1
+   1    360d.b35b.f3ca    DYNAMIC     Fa0/1
+   1    3836.dc63.5bb0    DYNAMIC     Fa0/1
+   1    3eac.2162.c99e    DYNAMIC     Fa0/1
+   1    4258.2444.dfdf    DYNAMIC     Fa0/1
+   1    4e87.cd35.9437    DYNAMIC     Fa0/1
+   1    4ede.a85c.6877    DYNAMIC     Fa0/1
+   1    5448.1a71.387c    DYNAMIC     Fa0/1
+   1    56f6.9504.bfbb    DYNAMIC     Fa0/1
+   1    62a6.285f.112b    DYNAMIC     Fa0/1
+   1    6497.8648.2e90    DYNAMIC     Fa0/1
+   1    661f.7e56.95f7    DYNAMIC     Fa0/1
+   1    724b.ea65.23c1    DYNAMIC     Fa0/1
+   1    76e6.0c19.a40c    DYNAMIC     Fa0/1
+   1    781e.9225.c3bb    DYNAMIC     Fa0/1
+   1    80cb.7379.00c1    DYNAMIC     Fa0/1
+   1    84d1.285d.d9c6    DYNAMIC     Fa0/1
+   1    8c20.6f54.c338    DYNAMIC     Fa0/1
+   1    9033.3a1a.b153    DYNAMIC     Fa0/1
+   1    967c.d734.8209    DYNAMIC     Fa0/1
+   1    9886.3a38.ed3f    DYNAMIC     Fa0/1
+   1    a006.1e2c.1a75    DYNAMIC     Fa0/1
+   1    a473.1710.2afe    DYNAMIC     Fa0/1
+   1    a4bf.577b.eab3    DYNAMIC     Fa0/1
+   1    aa37.322b.545a    DYNAMIC     Fa0/1
+   1    aa9f.450e.22ff    DYNAMIC     Fa0/1
+   1    b869.3d02.6a2a    DYNAMIC     Fa0/1
+   1    bccb.b019.5160    DYNAMIC     Fa0/1
+   1    c418.4b49.b7e3    DYNAMIC     Fa0/1
+   1    c458.d016.058e    DYNAMIC     Fa0/1
+   1    d024.fa58.cdf7    DYNAMIC     Fa0/1
+   1    d0c5.f106.3384    DYNAMIC     Fa0/1
+   1    d841.ef78.4ac2    DYNAMIC     Fa0/1
+   1    dafa.eb0c.4e04    DYNAMIC     Fa0/1
+   1    de8a.0c6c.d684    DYNAMIC     Fa0/1
+   1    e82b.e14a.1d26    DYNAMIC     Fa0/1
+   1    e877.f238.079e    DYNAMIC     Fa0/1
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+   1    ec1b.ac17.61d1    DYNAMIC     Fa0/1
+   1    ec96.177d.9be3    DYNAMIC     Fa0/1
+   1    f88d.2a71.cd50    DYNAMIC     Fa0/1
+   1    f8b2.8c1a.ea5f    DYNAMIC     Fa0/1
+   1    fa1a.3700.a0a5    DYNAMIC     Fa0/1
+   1    fa1b.0d26.4b97    DYNAMIC     Fa0/1
+   1    faf3.762d.cebd    DYNAMIC     Fa0/1
+   1    fc67.ac4e.de18    DYNAMIC     Fa0/1
+   1    00f7.b91d.445a    DYNAMIC     Fa0/1
+   1    287c.330a.44b8    DYNAMIC     Fa0/1
+   1    2e15.0e0c.36c8    DYNAMIC     Fa0/1
+   1    349f.0533.4d1a    DYNAMIC     Fa0/1
+   1    360d.b35b.f3ca    DYNAMIC     Fa0/1
+   1    3836.dc63.5bb0    DYNAMIC     Fa0/1
+   1    3eac.2162.c99e    DYNAMIC     Fa0/1
+   1    4258.2444.dfdf    DYNAMIC     Fa0/1
+   1    4e87.cd35.9437    DYNAMIC     Fa0/1
+   1    4ede.a85c.6877    DYNAMIC     Fa0/1
+   1    5448.1a71.387c    DYNAMIC     Fa0/1
+   1    56f6.9504.bfbb    DYNAMIC     Fa0/1
+   1    62a6.285f.112b    DYNAMIC     Fa0/1
+   1    6497.8648.2e90    DYNAMIC     Fa0/1
+   1    661f.7e56.95f7    DYNAMIC     Fa0/1
+   1    724b.ea65.23c1    DYNAMIC     Fa0/1
+   1    76e6.0c19.a40c    DYNAMIC     Fa0/1
+   1    781e.9225.c3bb    DYNAMIC     Fa0/1
+   1    80cb.7379.00c1    DYNAMIC     Fa0/1
+   1    84d1.285d.d9c6    DYNAMIC     Fa0/1
+   1    8c20.6f54.c338    DYNAMIC     Fa0/1
+   1    9033.3a1a.b153    DYNAMIC     Fa0/1
+   1    967c.d734.8209    DYNAMIC     Fa0/1
+   1    9886.3a38.ed3f    DYNAMIC     Fa0/1
+   1    a006.1e2c.1a75    DYNAMIC     Fa0/1
+   1    a473.1710.2afe    DYNAMIC     Fa0/1
+   1    a4bf.577b.eab3    DYNAMIC     Fa0/1
+   1    aa37.322b.545a    DYNAMIC     Fa0/1
+   1    aa9f.450e.22ff    DYNAMIC     Fa0/1
+   1    b869.3d02.6a2a    DYNAMIC     Fa0/1
+   1    bccb.b019.5160    DYNAMIC     Fa0/1
+   1    c418.4b49.b7e3    DYNAMIC     Fa0/1
+   1    c458.d016.058e    DYNAMIC     Fa0/1
+   1    d024.fa58.cdf7    DYNAMIC     Fa0/1
+   1    d0c5.f106.3384    DYNAMIC     Fa0/1
+   1    d841.ef78.4ac2    DYNAMIC     Fa0/1
+   1    dafa.eb0c.4e04    DYNAMIC     Fa0/1
+   1    de8a.0c6c.d684    DYNAMIC     Fa0/1
+   1    e82b.e14a.1d26    DYNAMIC     Fa0/1
+   1    e877.f238.079e    DYNAMIC     Fa0/1
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+   1    ec1b.ac17.61d1    DYNAMIC     Fa0/1
+   1    ec96.177d.9be3    DYNAMIC     Fa0/1
+   1    f88d.2a71.cd50    DYNAMIC     Fa0/1
+   1    f8b2.8c1a.ea5f    DYNAMIC     Fa0/1
+   1    fa1a.3700.a0a5    DYNAMIC     Fa0/1
+   1    fa1b.0d26.4b97    DYNAMIC     Fa0/1
+   1    faf3.762d.cebd    DYNAMIC     Fa0/1
+   1    fc67.ac4e.de18    DYNAMIC     Fa0/1
+   1    00f7.b91d.445a    DYNAMIC     Fa0/1
+   1    287c.330a.44b8    DYNAMIC     Fa0/1
+   1    2e15.0e0c.36c8    DYNAMIC     Fa0/1
+   1    349f.0533.4d1a    DYNAMIC     Fa0/1
+   1    360d.b35b.f3ca    DYNAMIC     Fa0/1
+   1    3836.dc63.5bb0    DYNAMIC     Fa0/1
+   1    3eac.2162.c99e    DYNAMIC     Fa0/1
+   1    4258.2444.dfdf    DYNAMIC     Fa0/1
+   1    4e87.cd35.9437    DYNAMIC     Fa0/1
+   1    4ede.a85c.6877    DYNAMIC     Fa0/1
+   1    5448.1a71.387c    DYNAMIC     Fa0/1
+   1    56f6.9504.bfbb    DYNAMIC     Fa0/1
+   1    62a6.285f.112b    DYNAMIC     Fa0/1
+   1    6497.8648.2e90    DYNAMIC     Fa0/1
+   1    661f.7e56.95f7    DYNAMIC     Fa0/1
+   1    724b.ea65.23c1    DYNAMIC     Fa0/1
+   1    76e6.0c19.a40c    DYNAMIC     Fa0/1
+   1    781e.9225.c3bb    DYNAMIC     Fa0/1
+   1    80cb.7379.00c1    DYNAMIC     Fa0/1
+   1    84d1.285d.d9c6    DYNAMIC     Fa0/1
+   1    8c20.6f54.c338    DYNAMIC     Fa0/1
+   1    9033.3a1a.b153    DYNAMIC     Fa0/1
+   1    967c.d734.8209    DYNAMIC     Fa0/1
+   1    9886.3a38.ed3f    DYNAMIC     Fa0/1
+   1    a006.1e2c.1a75    DYNAMIC     Fa0/1
+   1    a473.1710.2afe    DYNAMIC     Fa0/1
+   1    a4bf.577b.eab3    DYNAMIC     Fa0/1
+   1    aa37.322b.545a    DYNAMIC     Fa0/1
+   1    aa9f.450e.22ff    DYNAMIC     Fa0/1
+   1    b869.3d02.6a2a    DYNAMIC     Fa0/1
+   1    bccb.b019.5160    DYNAMIC     Fa0/1
+   1    c418.4b49.b7e3    DYNAMIC     Fa0/1
+   1    c458.d016.058e    DYNAMIC     Fa0/1
+   1    d024.fa58.cdf7    DYNAMIC     Fa0/1
+   1    d0c5.f106.3384    DYNAMIC     Fa0/1
+   1    d841.ef78.4ac2    DYNAMIC     Fa0/1
+   1    dafa.eb0c.4e04    DYNAMIC     Fa0/1
+   1    de8a.0c6c.d684    DYNAMIC     Fa0/1
+   1    e82b.e14a.1d26    DYNAMIC     Fa0/1
+   1    e877.f238.079e    DYNAMIC     Fa0/1
+   1    e89a.8f7c.fa0f    DYNAMIC     Fa0/1
+   1    ec1b.ac17.61d1    DYNAMIC     Fa0/1
+   1    ec96.177d.9be3    DYNAMIC     Fa0/1
+   1    f88d.2a71.cd50    DYNAMIC     Fa0/1
+   1    f8b2.8c1a.ea5f    DYNAMIC     Fa0/1
+   1    fa1a.3700.a0a5    DYNAMIC     Fa0/1
+   1    fa1b.0d26.4b97    DYNAMIC     Fa0/1
+   1    faf3.762d.cebd    DYNAMIC     Fa0/1
+   1    fc67.ac4e.de18    DYNAMIC     Fa0/1
+Total Mac Addresses for this criterion: 397
+2950A#sh mac-address-table count
+
+Mac Entries for Vlan 1:
+---------------------------
+Dynamic Address Count  : 8190
+Static  Address Count  : 0
+Total Mac Addresses    : 8190
+
+Total Mac Address Space Available: 0
